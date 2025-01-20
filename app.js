@@ -23,7 +23,7 @@ function exibirNomeNaLista() {
         let listaNomes = document.createElement("li");
         // 'createElement' cria uma tag para que possa ser manipulado diretamente do JS
         listaNomes.textContent = nomesParaSorteio[i];
-    // 'textContent' adiciona conteúdo à tag criada
+        // 'textContent' adiciona conteúdo à tag criada
         lista.appendChild(listaNomes);
         // 'appendChild' relaciona uma coisa a outra como 'pai e filho'
     }
@@ -42,6 +42,9 @@ function limparLista() {
     console.log("Limpou a lista");
 }
 
+function limparNome() {
+
+}
 
 // Função para adicionar o Nome inserido, em uma lista para que possa ser sorteado
 function adicionarAmigo() {
@@ -60,9 +63,23 @@ function adicionarAmigo() {
     }
 }
 
+function sorteioDosNomes() {
+    let amigoAleatorio = Math.floor(Math.random() * nomesParaSorteio.length);
+    return nomesParaSorteio[amigoAleatorio]; // retorna o nome que foi sorteado acima
+}
+
+function nomeNaTela() {
+    let nomeDoAmigo = document.getElementById("resultado");
+    let nomeSorteado = sorteioDosNomes(); // a variável agora recebe o nome sorteado
+    nomeDoAmigo.innerHTML = (`O seu amigo secreto é: ${nomeSorteado}`);
+    console.log(nomeDoAmigo);
+}
 
 function sortearAmigo() {
-    console.log("O botão sortear foi clicado");
-    limparLista();
-    console.log(nomesParaSorteio);
+    if (nomesParaSorteio.length !== 0) {    // veriifica se a lista está vazia para que possa sortear um nome
+        nomeNaTela();
+    } else {
+        console.log("A lista está vazia mano");
+    }
+
 }
