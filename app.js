@@ -13,11 +13,20 @@ let nomesParaSorteio = [];
 // Função para exibir os nomes adicionados a lista
 function exibirNomeNaLista() {
     let lista = document.getElementById("listaAmigos");
-    lista.innerHTML = (nomesParaSorteio);
-}
+    lista.innerHTML = "";
 
-for (let i = 0; i < nomesParaSorteio; i++) {
-    lista.innerHTML += `<li>${nomesParaSorteio}</li>`;
+    // loop para que seja adicionar em formato de lista cada nome inserido no Jogo
+    for (let i = 0; i < nomesParaSorteio.length; i++) {
+        // como o índicie 'i' é = a 0, ele começa sempre do primeiro valor da array
+        // enquanto i for menor que o número total de conteúdo da array, ele continuará no loop
+        // ao final de tudo ele soma um valor ao índice para que vá até o último valor da array
+        let listaNomes = document.createElement("li");
+        // 'createElement' cria uma tag para que possa ser manipulado diretamente do JS
+        listaNomes.textContent = nomesParaSorteio[i];
+    // 'textContent' adiciona conteúdo à tag criada
+        lista.appendChild(listaNomes);
+        // 'appendChild' relaciona uma coisa a outra como 'pai e filho'
+    }
 }
 
 // Função para limpar o campo para que possa ser inserido outro nome no Jogo
