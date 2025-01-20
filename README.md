@@ -24,7 +24,7 @@ Este é um simples jogo de **Amigo Secreto** em JavaScript, onde você pode adic
 
 ## Como jogar
 
-Basta entrar no link abaixo e tentar com seus amigos e ou familiares!
+Basta entrar no link abaixo e tentar com seus amigos e ou familiares!<br>
 https://amigo-secreto-sooty-three.vercel.app/
 
 ## Requisitos
